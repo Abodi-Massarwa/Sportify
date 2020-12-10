@@ -18,6 +18,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 public class MainActivity extends AppCompatActivity {
     Button sign_in_button;
     Button sign_up_button;
@@ -66,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void admin_login(View view) {
+
         /*
         let's validate if the desired user is really an admin
          */
@@ -76,7 +79,8 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot snap:snapshot.getChildren())
                 {
-                    if(snap.getValue().equals(email_edit.getText().toString()))
+
+                    if(snap.child("Email").getValue().equals(email_edit.getText().toString()))
                     {
 
                         auth.signInWithEmailAndPassword(email_edit.getText().toString(),pass_edit.getText().toString()).addOnCompleteListener(login -> {
@@ -90,10 +94,11 @@ public class MainActivity extends AppCompatActivity {
 
                         });
                     }
-                    else
-                    {
-                        Toast.makeText(MainActivity.this, "You're not an admin !", Toast.LENGTH_SHORT).show();
-                    }
+//                    else
+//                    {
+//                        if(is_admin.eq)
+//                        Toast.makeText(MainActivity.this, "You're not an admin !", Toast.LENGTH_SHORT).show();
+//                    }
                 }
             }
 
