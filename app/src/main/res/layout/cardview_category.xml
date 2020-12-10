@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:carview="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardview_id"
+    android:layout_width="130dp"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:layout_height="200dp"
+    android:layout_margin="5dp"
+    xmlns:tools= "http://schemas.android.com/tools"
+    carview:cardCornerRadius="4dp"
+    >
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+        <ImageView
+            android:id="@+id/categore_img_id"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:background="#2d2d2d"
+            android:scaleType="centerCrop" />
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#2d2d2d"
+                android:gravity="center"
+                android:fontFamily="@string/appbar_scrolling_view_behavior"
+                android:textSize="13sp"
+                android:id="@+id/category"
+                android:text="category_name_id"
+                />
+
+  </LinearLayout>
+</androidx.cardview.widget.CardView>

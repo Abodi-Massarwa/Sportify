@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "845816330934",
+    "project_id": "sportify-814d4",
+    "storage_bucket": "sportify-814d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845816330934:android:356db46d6aeaf265ce8417",
+        "android_client_info": {
+          "package_name": "com.example.sportify"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "845816330934-ueb6q9b9ej1rpts2bmu64nq4nch4as4o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sportify",
+            "certificate_hash": "2b701d5b065f8daf1fd621e6337a7539e71df354"
+          }
+        },
+        {
+          "client_id": "845816330934-2dtgqr4vhuhtavvfo3i92dgdf7de4e1j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_mIxH5lYE6cSZqzrUpcjebwS151Oosr0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "845816330934-2dtgqr4vhuhtavvfo3i92dgdf7de4e1j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
