@@ -37,7 +37,7 @@ public class CategoryActivity extends AppCompatActivity {
         drawer =(DrawerLayout)findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawer,toolbar,R.string.navigation_drawer_open
         ,R.string.navigation_drawer_close);
-       Category.add(new Category("Dumbells","Category Sport",R.drawable.dumbelllogo));
+        Category.add(new Category("Dumbells","Category Sport",R.drawable.dumbelllogo));
         Category.add(new Category("Athlete","Category Sport" ,R.drawable.basketball));
         Category.add(new Category("Sport Equipments","Category Sport",R.drawable.gym));
         Category.add((new Category("Clothes","Category Sport",R.drawable.sportlogo)));

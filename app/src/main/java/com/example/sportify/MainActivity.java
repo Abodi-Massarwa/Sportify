@@ -23,10 +23,8 @@ public class MainActivity extends AppCompatActivity {
     Button sign_up_button;
     EditText email_edit;
     EditText pass_edit;
-
-
     FirebaseAuth auth = FirebaseAuth.getInstance();
-    
+    Button AdminButton;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main); // login activity
@@ -35,14 +33,14 @@ public class MainActivity extends AppCompatActivity {
         pass_edit = findViewById(R.id.password) ;
         sign_in_button =findViewById(R.id.signin);
         sign_up_button = findViewById(R.id.signup);
-
+        AdminButton = findViewById(R.id.admin);
         sign_in_button.setOnClickListener(view ->{
             String email_text = email_edit.getText().toString().trim();
             String password_text = pass_edit.getText().toString().trim();
 
             auth.signInWithEmailAndPassword(email_text,password_text).addOnCompleteListener(login ->{
                 if(login.isSuccessful()) {
-                    Intent myIntent = new Intent(getApplicationContext(), productsActivity.class);
+                    Intent myIntent = new Intent(getApplicationContext(), CategoryActivity.class);
                     startActivity(myIntent);
                     finish();
                 }
@@ -64,7 +62,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent= new Intent(Intent.ACTION_DIAL, Uri.parse("tel: 0524472633"));
         startActivity(intent);
     }
-
+    // in xml file of mainactivity we had attribute called onClick= "admin_login" he knows that he will call this method
+    // in MainActivity class
     public void admin_login(View view) {
         /*
         let's validate if the desired user is really an admin
@@ -104,4 +103,5 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
 }

@@ -26,6 +26,7 @@ public class productAdapter extends FirebaseRecyclerAdapter<ProductDetails, prod
         ImageView img;
         public product_view_holder(@NonNull View itemView)
         {
+            // get values from single_products.xml
             super(itemView);
             title_text = itemView.findViewById(R.id.title_text);
             details_text = itemView.findViewById(R.id.details_text);

@@ -18,8 +18,6 @@ public class productsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_products);
-
-
         databaseReference = FirebaseDatabase.getInstance().getReference("Products");
         recView = findViewById(R.id.recView);
         recView.setLayoutManager(new LinearLayoutManager(this));

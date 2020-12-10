@@ -62,10 +62,7 @@ public class RecyclerViewerAdapter extends RecyclerView.Adapter<RecyclerViewerAd
             holder.cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(mContext,Product_activity.class);
-                    intent.putExtra("name",mData.get(position).getName());
-                    intent.putExtra("Category",mData.get(position).getCategory());
-                    intent.putExtra("position",mData.get(position).getPosition());
+                    Intent intent = new Intent(mContext,productsActivity.class);
                     mContext.startActivity(intent);
                 }
             });

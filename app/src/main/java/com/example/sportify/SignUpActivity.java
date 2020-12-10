@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -17,17 +18,12 @@ public class SignUpActivity extends AppCompatActivity {
 
     private Button signUP_button;
     private EditText first_edit,last_edit,email_edit, area_edit, phoneNumber_edit, password_edit,confirm_edit;
-    FirebaseAuth ref=FirebaseAuth.getInstance();
+    private  FirebaseAuth ref=FirebaseAuth.getInstance();
     private User customer;
-
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-
-
         signUP_button = (Button)findViewById(R.id.userbtn);
-
         first_edit =  (EditText) findViewById(R.id.first_edit);
         last_edit =  (EditText) findViewById(R.id.last_edit);
         email_edit = (EditText) findViewById(R.id.email_edit);
@@ -35,9 +31,6 @@ public class SignUpActivity extends AppCompatActivity {
         phoneNumber_edit =  (EditText) findViewById(R.id.phone_edit);
         password_edit=  (EditText) findViewById(R.id.password_edit);
         confirm_edit =  (EditText) findViewById(R.id.confirm_edit);
-
-
-
         signUP_button.setOnClickListener(v -> {
             customer = new User(first_edit.getText().toString().trim(), last_edit.getText().toString().trim(), area_edit.getText().toString().trim(), phoneNumber_edit.getText().toString().trim(), email_edit.getText().toString().trim());
 
@@ -66,7 +59,11 @@ public class SignUpActivity extends AppCompatActivity {
                     ref1.child(ref.getCurrentUser().getUid()).setValue(customer);
                     Intent myIntent = new Intent(getApplicationContext(), MainActivity.class); //move to main menu activity
                     startActivity(myIntent);
+                }else{
+
+                    Toast.makeText(SignUpActivity.this,"Failed",Toast.LENGTH_SHORT).show();
                 }
+
             });
 
         });
