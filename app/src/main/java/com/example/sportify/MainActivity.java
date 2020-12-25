@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         dbRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot snap:snapshot.getChildren())
+                for(DataSnapshot snap : snapshot.getChildren())
                 {
 
                     if(snap.child("Email").getValue().equals(email_edit.getText().toString()))

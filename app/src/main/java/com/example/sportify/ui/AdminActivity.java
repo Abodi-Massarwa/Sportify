@@ -4,11 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.sportify.CategoryActivity;
 import com.example.sportify.ProductDetails;
 import com.example.sportify.R;
 import com.example.sportify.tools.Product;
@@ -39,8 +41,6 @@ public class AdminActivity extends AppCompatActivity {
          url=findViewById(R.id.product_url);
          condition=findViewById(R.id.product_condition);
     }
-
-
     /*
     click listener for product adding in the admin's section
      */
@@ -53,10 +53,13 @@ public class AdminActivity extends AppCompatActivity {
         dbRef.child(id).setValue(pd, new DatabaseReference.CompletionListener() {
             @Override
             public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
-                if(error==null)
-                Toast.makeText(AdminActivity.this, "Successfully added product", Toast.LENGTH_SHORT).show();
-                else
+                if (error == null) {
+                    Toast.makeText(AdminActivity.this, "Successfully added product", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(AdminActivity.this, CategoryActivity.class);
+                    startActivity(intent);
+                } else {
                     Toast.makeText(AdminActivity.this, "Failed to add product", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

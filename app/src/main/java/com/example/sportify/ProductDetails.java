@@ -33,6 +33,7 @@ public class ProductDetails{
         this.utc = utc;
     }
 
+
     public String getTitle() {
         return title;
     }
