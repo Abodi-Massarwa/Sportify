@@ -1,5 +1,6 @@
 package com.example.sportify;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -12,11 +13,15 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.sportify.tools.Category;
+import com.example.sportify.ui.AdminActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
@@ -28,6 +33,7 @@ public class CategoryActivity extends AppCompatActivity {
    private List<Category> Category;
    Toolbar toolbar;
    private DrawerLayout drawer;
+   private NavigationView navigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +41,7 @@ public class CategoryActivity extends AppCompatActivity {
         Category = new ArrayList<>();
         toolbar =(Toolbar)findViewById(R.id.toolbar);
         drawer =(DrawerLayout)findViewById(R.id.drawer_layout);
+        navigationView =(NavigationView)findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawer,toolbar,R.string.navigation_drawer_open
         ,R.string.navigation_drawer_close);
         Category.add(new Category("Dumbells","Category Sport",R.drawable.dumbelllogo));
@@ -54,15 +61,43 @@ public class CategoryActivity extends AppCompatActivity {
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         setSupportActionBar(toolbar);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+              //  Intent i;
+                switch (item.getItemId()) {
+                    case R.id.log_out:
+                      Intent  i = new Intent(CategoryActivity.this,MainActivity.class);
+                        startActivity(i);
+                        return true;
+                    case R.id.profile:
+                          Intent j = new Intent(CategoryActivity.this,ProfileActivity.class);
+                        startActivity(j);
+                        return true;
+                    case R.id.edit_profile:
+                       Intent K = new Intent(CategoryActivity.this,ProfileActivity.class);
+                        startActivity(K);
+                        return true;
+                    case R.id.add_product:
+                        Intent L = new Intent(CategoryActivity.this, AdminActivity.class);
+                        startActivity(L);
+                        return true;
+
+                }
+                return false;
+            }
+
+        });
 
     }
 
-    @Override
-    public void onBackPressed() {
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        }else {
-            super.onBackPressed();
-        }
-    }
+   // @Override
+  //  public void onBackPressed() {
+    //    if (drawer.isDrawerOpen(GravityCompat.START)) {
+           //drawer.closeDrawer(GravityCompat.START);
+      //  }else {
+        //    super.onBackPressed();
+        //}
+    ///}
+
 }

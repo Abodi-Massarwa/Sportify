@@ -63,6 +63,7 @@ public class RecyclerViewerAdapter extends RecyclerView.Adapter<RecyclerViewerAd
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(mContext,productsActivity.class);
+                    intent.putExtra("Category", holder.categry_name.getText().toString());
                     mContext.startActivity(intent);
                 }
             });

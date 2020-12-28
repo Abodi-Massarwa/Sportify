@@ -25,17 +25,18 @@
         android:layout_height="58dp"
         android:hint="Enter product's condition" />
 
-    <EditText
-        android:id="@+id/product_details"
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:hint="Enter product details" />
 
     <EditText
         android:id="@+id/product_url"
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:hint="Enter desired image url" />
+
+    <EditText
+        android:id="@+id/product_details"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:hint="Enter desired details" />
 
     <Button
         android:id="@+id/send_info"

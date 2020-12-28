@@ -7,11 +7,6 @@
            android:icon="@drawable/profile"
            android:title="PROFILE"/>
 
-       <item android:id="@+id/log_out"
-           android:icon="@drawable/log_out"
-           android:title="LOG OUT" />
-
-
        <item android:id="@+id/add_product"
            android:icon="@drawable/log_out"
            android:title="ADD PRODUCT" />
@@ -19,10 +14,14 @@
        <item android:id="@+id/message"
            android:icon="@drawable/ic_baseline_message_24"
            android:title="Message" />
-       <item android:id="@+id/change_passowrd"
+       <item android:id="@+id/edit_profile"
            android:title="Edit profile"
            android:icon="@drawable/edit"
            />
+
+       <item android:id="@+id/log_out"
+           android:icon="@drawable/log_out"
+           android:title="LOG OUT" />
 
    </group>
 </menu>

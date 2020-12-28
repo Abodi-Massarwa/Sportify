@@ -32,6 +32,13 @@ public class ProductDetails{
         this.price = price;
         this.utc = utc;
     }
+    public ProductDetails(String title, String details, String condition, String price ) {
+        this.title = title;
+        this.details = details;
+        this.condition = condition;
+        this.price = price;
+    }
+
 
 
     public String getTitle() {

@@ -25,13 +25,23 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimary"
+            android:background="@color/purple_500"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
         <FrameLayout
             android:id="@id/fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent" >
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:menu="@menu/drawer_menu1"
+                android:layout_marginTop="760dp"
+                android:background="@color/colorPrimary"
+                />
+
+
+        </FrameLayout>
 
     </LinearLayout>
     <com.google.android.material.navigation.NavigationView

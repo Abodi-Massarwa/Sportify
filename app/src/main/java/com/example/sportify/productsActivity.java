@@ -20,17 +20,17 @@ public class productsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_products);
         databaseReference = FirebaseDatabase.getInstance().getReference("Products");
         recView = findViewById(R.id.recView);
+        Bundle extras = getIntent().getExtras();
+        String category = extras.getString("Category");
         recView.setLayoutManager(new LinearLayoutManager(this));
         FirebaseRecyclerOptions<ProductDetails> options =
                 new FirebaseRecyclerOptions.Builder<ProductDetails>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Products"), ProductDetails.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Products").orderByChild("details").equalTo(category), ProductDetails.class)
                         .build();
 
         adapter = new productAdapter(options);
         recView.setAdapter(adapter);
-
     }
-
     @Override
     protected void onStart() {
         super.onStart();

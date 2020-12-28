@@ -13,12 +13,9 @@ import android.widget.Toast;
 import com.example.sportify.CategoryActivity;
 import com.example.sportify.ProductDetails;
 import com.example.sportify.R;
-import com.example.sportify.tools.Product;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.text.BreakIterator;
 
 public class AdminActivity extends AppCompatActivity {
     EditText name;

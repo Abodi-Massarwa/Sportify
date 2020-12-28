@@ -9,11 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Sportify">
-        <activity android:name=".ui.AdminActivity"></activity>
-        <activity android:name=".CategoryActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-
-            ></activity>
+        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".ui.AdminActivity" />
+        <activity
+            android:name=".CategoryActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".productsActivity" />
         <activity android:name=".MainActivity">
