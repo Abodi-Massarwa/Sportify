@@ -13,15 +13,19 @@ import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.Objects;
 
 public class productAdapter extends FirebaseRecyclerAdapter<ProductDetails, productAdapter.product_view_holder> {
 
     static class product_view_holder extends RecyclerView.ViewHolder {
         FirebaseAuth ref=FirebaseAuth.getInstance();
-        TextView title_text, details_text, price_text, condition_text, utc_text;
+        TextView title_text, details_text, price_text, condition_text, utc_text, quantity_text;
         Button buy_button;
         ImageView img;
         public product_view_holder(@NonNull View itemView)
@@ -34,12 +38,16 @@ public class productAdapter extends FirebaseRecyclerAdapter<ProductDetails, prod
             utc_text = itemView.findViewById(R.id.utc_text);
             img = itemView.findViewById(R.id.image_url);
             buy_button = itemView.findViewById(R.id.buy_button);
+            quantity_text=itemView.findViewById(R.id.quantity_text);
 
             // buy button
             buy_button.setOnClickListener(v -> {
-                ProductDetails productDetails = new ProductDetails(title_text.getText().toString().trim(), details_text.getText().toString().trim(), condition_text.getText().toString().trim(), price_text.getText().toString().trim(), utc_text.getText().toString().trim());
+
+                ProductDetails productDetails = new ProductDetails(title_text.getText().toString().trim(), details_text.getText().toString().trim(), condition_text.getText().toString().trim(), price_text.getText().toString().trim(), utc_text.getText().toString().trim(),quantity_text.getText().toString().trim());
                 DatabaseReference ref1 = FirebaseDatabase.getInstance().getReference("customers/"+ Objects.requireNonNull(ref.getCurrentUser()).getUid()+"/z_bought products/"+productDetails.getTitle());
-                ref1.child(ref.getCurrentUser().getUid()).setValue(productDetails);
+                DatabaseReference ref_check_availability = FirebaseDatabase.getInstance().getReference("customers/"+ Objects.requireNonNull(ref.getCurrentUser()).getUid()+"/z_bought products/");
+                ref1.setValue(productDetails);
+
             });
         }
     }

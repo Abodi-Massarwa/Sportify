@@ -69,6 +69,28 @@
             android:textColor="#000"
             android:textSize="16sp" />
 
+        <EditText
+            android:id="@+id/quantity_text"
+            android:layout_width="99dp"
+            android:layout_height="73dp"
+            android:layout_below="@+id/price_text"
+            android:layout_alignStart="@+id/buy_button"
+            android:layout_alignLeft="@+id/buy_button"
+            android:layout_alignEnd="@+id/buy_button"
+            android:layout_alignRight="@+id/buy_button"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="229dp"
+            android:layout_marginLeft="229dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="-110dp"
+            android:layout_marginRight="-110dp"
+            android:layout_marginBottom="0dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="1"
+            android:textAlignment="center"
+            android:gravity="center_horizontal" />
+
         <Button
             android:id="@+id/buy_button"
             android:layout_width="wrap_content"
@@ -86,7 +108,7 @@
             android:layout_marginRight="102dp"
             android:layout_marginBottom="0dp"
             android:insetLeft="50dp"
-            android:text="buy this product"
+            android:text="add to cart"
             app:backgroundTint="#934E4E" />
 
         <ImageView

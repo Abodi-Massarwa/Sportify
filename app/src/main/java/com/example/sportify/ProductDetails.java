@@ -17,6 +17,16 @@ public class ProductDetails{
     private String condition;
     private String price;
     private String utc;
+    private String quantity;
+
+    public ProductDetails(String title, String details, String condition, String price, String id) {
+        this.title = title;
+        this.details = details;
+        this.condition = condition;
+        this.price = price;
+        this.utc=id;
+    }
+
     //public String id;
     public String getUtc() {
         return utc;
@@ -25,14 +35,15 @@ public class ProductDetails{
     public ProductDetails(){
 
     }
-    public ProductDetails(String title, String details, String condition, String price, String utc ) {
+    public ProductDetails(String title, String details, String condition, String price, String utc, String quantity ) {
         this.title = title;
         this.details = details;
         this.condition = condition;
         this.price = price;
         this.utc = utc;
+        this.quantity=quantity;
     }
-
+    public String getQuantity(){return this.quantity;}
     public String getTitle() {
         return title;
     }
@@ -62,6 +73,6 @@ public class ProductDetails{
                 + "," + image_url
                 + "," + condition
                 + "," + price
-                + "," + utc + "]";
+                + "," + utc +","+quantity+ "]";
     }
 }
