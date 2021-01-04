@@ -12,6 +12,8 @@ public class User implements Serializable {
     private String email;
     private String password;
     private List<Relation> posts = new ArrayList<>();
+    private String Image;
+    private int profile ;
     //private String passWord;
     public User() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
@@ -29,6 +31,7 @@ public class User implements Serializable {
         this.number = number;
         this.password = password;
     }
+
 
     public void setPosts(List<Relation> posts) {
         this.posts = posts;

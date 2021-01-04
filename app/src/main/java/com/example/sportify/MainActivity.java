@@ -1,10 +1,18 @@
 package com.example.sportify;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.icu.util.BuddhistCalendar;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +28,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import static com.example.sportify.ProfileActivity.PERMISSION_REQ_CODE;
+
 public class MainActivity extends AppCompatActivity {
     Button sign_in_button;
     Button sign_up_button;
@@ -27,11 +37,17 @@ public class MainActivity extends AppCompatActivity {
     EditText pass_edit;
     FirebaseAuth auth = FirebaseAuth.getInstance();
     Button AdminButton;
+    SharedPreferences sp ;
+    SharedPreferences.Editor edit ;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main); // login activity
-
+        sp = getSharedPreferences("Emails",MODE_PRIVATE);
+        sp.edit();
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},PERMISSION_REQ_CODE);
+        }
         email_edit = findViewById(R.id.email_edit);
         pass_edit = findViewById(R.id.password);
         sign_in_button = findViewById(R.id.signin);

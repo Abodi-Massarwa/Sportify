@@ -44,7 +44,6 @@ public class productAdapter extends FirebaseRecyclerAdapter<ProductDetails, prod
                 ref1.child(ref.getCurrentUser().getUid()).setValue(productDetails);
                 Snackbar.make(buy_button,"Order submitted",Snackbar.LENGTH_LONG).show();
             });
-          //  Snackbar.make(buy_button,"Order submitted",Snackbar.LENGTH_LONG).show();
         }
     }
 

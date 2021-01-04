@@ -1,5 +1,17 @@
 <resources>
     <string name="app_name">Sportify</string>
+    <string-array name="categories">
+        <item>Dumbells</item>
+        <item>Sport</item>
+        <item>Protiens</item>
+        <item>Electrics</item>
+        <item>Balls</item>
+        <item>Protien Bars</item>
+        <item>Shakers</item>
+        <item>Clothes</item>
+        <item>Athlete</item>
+        <item>Sport Equipments</item>
+    </string-array>
     <string name="title_activity_menu">Menu</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

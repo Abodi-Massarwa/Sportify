@@ -8,6 +8,7 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
     tools:context=".CategoryActivity"
+    android:background="@color/cardview_shadow_end_color"
   >
 
     <androidx.recyclerview.widget.RecyclerView
@@ -31,17 +32,23 @@
         <FrameLayout
             android:id="@id/fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
+
+
+
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                app:menu="@menu/drawer_menu1"
-                android:layout_marginTop="760dp"
-                android:background="@color/colorPrimary"
-                />
-
+                android:layout_height="58dp"
+                android:layout_marginTop="750sp"
+                android:background="@color/purple_700"
+                app:itemBackground="@color/purple_700"
+                app:itemIconTint="@color/white"
+                app:itemTextColor="@color/white"
+                android:id="@+id/bottom_nav"
+                app:menu="@menu/drawer_menu1" />
 
         </FrameLayout>
+
 
     </LinearLayout>
     <com.google.android.material.navigation.NavigationView

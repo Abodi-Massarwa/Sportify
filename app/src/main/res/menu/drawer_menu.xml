@@ -8,16 +8,18 @@
            android:title="PROFILE"/>
 
        <item android:id="@+id/add_product"
-           android:icon="@drawable/log_out"
+           android:icon="@drawable/float_add"
            android:title="ADD PRODUCT" />
+       <item android:id="@+id/Shopping_cart"
+           android:title="Shopping Cart"
+           android:icon="@drawable/shopping"
+           android:visible="true"
+           />
 
        <item android:id="@+id/message"
            android:icon="@drawable/ic_baseline_message_24"
            android:title="Message" />
-       <item android:id="@+id/edit_profile"
-           android:title="Edit profile"
-           android:icon="@drawable/edit"
-           />
+
 
        <item android:id="@+id/log_out"
            android:icon="@drawable/log_out"

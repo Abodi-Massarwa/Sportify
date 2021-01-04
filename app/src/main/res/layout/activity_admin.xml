@@ -1,51 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.circularreveal.CircularRevealLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/side_nav_bar"
+    android:background="@color/American"
     android:orientation="vertical">
 
 
     <EditText
         android:id="@+id/product_name"
         android:layout_width="match_parent"
-        android:layout_height="58dp"
+        android:layout_height="58sp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="0dp"
         android:hint="Enter product name" />
 
     <EditText
         android:id="@+id/product_price"
         android:layout_width="match_parent"
         android:layout_height="58dp"
+        android:layout_below="@id/product_name"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:hint="Enter product price" />
+
     <EditText
         android:id="@+id/product_condition"
         android:layout_width="match_parent"
         android:layout_height="58dp"
+android:layout_below="@id/product_price"
         android:hint="Enter product's condition" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="58dp"
+        android:paddingTop="10dp"
+        android:layout_marginLeft="4sp"
+        android:layout_below="@id/product_condition"
+        android:text="Category"
+        android:id="@+id/text_view"
+        android:textSize="22sp"
+        android:textStyle="bold" />
 
-    <EditText
+    <Spinner
+        android:id="@+id/product_details"
+        android:layout_width="320dp"
+        android:layout_height="58dp"
+        android:layout_below="@id/product_condition"
+        android:layout_alignLeft="@id/text_view"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="100dp"
+
+        android:layout_marginTop="1dp"
+
+        android:layout_marginRight="0dp"
+        android:hint="category"
+        android:textColor="@color/black" />
+
+    <Button
         android:id="@+id/product_url"
         android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:hint="Enter desired image url" />
-
-    <EditText
-        android:id="@+id/product_details"
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:hint="Enter desired details" />
+        android:layout_height="99dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/product_details"
+        android:textSize="20dp"
+        android:hint="Upload Product Photo" />
 
     <Button
         android:id="@+id/send_info"
         android:layout_width="match_parent"
         android:layout_height="99dp"
+        android:onClick="add_product"
         android:text="add product"
+        android:layout_below="@id/product_url"
         app:backgroundTint="@color/design_default_color_error"
         tools:layout_editor_absoluteX="136dp"
-        tools:layout_editor_absoluteY="57dp"
-        android:onClick="add_product"
-        />
-</com.google.android.material.circularreveal.CircularRevealLinearLayout>
+        tools:layout_editor_absoluteY="57dp" />
+    ></RelativeLayout>

@@ -9,7 +9,8 @@ public class User implements Serializable {
     private String number;
     private String email;
     private String password;
-
+    private String Image;
+    private  int profile;
     //private String passWord;
     public User() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
@@ -23,6 +24,16 @@ public class User implements Serializable {
         this.area = area;
         this.number = number;
         this.password = password;
+    }
+
+    public User(String Image,String name, String area, String number, String email,int i) {
+        this.name = name;
+        this.email = email;
+        this.area = area;
+        this.number = number;
+        this.password = password;
+        this.Image = Image;
+        this.profile = i;
     }
 
 
