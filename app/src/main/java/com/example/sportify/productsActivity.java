@@ -28,6 +28,7 @@ public class productsActivity extends AppCompatActivity {
     private ActivityProductsBinding binding;
     FirebaseRecyclerOptions<ProductDetails> options;
     private String category;
+    private String status;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding =  ActivityProductsBinding.inflate(getLayoutInflater());
@@ -44,15 +45,22 @@ public class productsActivity extends AppCompatActivity {
         recView = findViewById(R.id.recView);
         Bundle extras = getIntent().getExtras();
          category = extras.getString("Category");
+         status = extras.getString("Status");
         recView.setLayoutManager(new LinearLayoutManager(this));
-         options =
-                new FirebaseRecyclerOptions.Builder<ProductDetails>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Products").orderByChild("details").equalTo(category), ProductDetails.class)
-                        .build();
-
+        if (category != null) {
+             options =
+                     new FirebaseRecyclerOptions.Builder<ProductDetails>()
+                             .setQuery(FirebaseDatabase.getInstance().getReference().child("Products").orderByChild("details").equalTo(category), ProductDetails.class)
+                             .build();
+         }
+        if (status != null){
+            options =
+                    new FirebaseRecyclerOptions.Builder<ProductDetails>()
+                            .setQuery(FirebaseDatabase.getInstance().getReference().child("Products"), ProductDetails.class)
+                            .build();
+        }
         adapter = new productAdapter(options);
         recView.setAdapter(adapter);
-
        // binding.bottomNavigationView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
          //   @Override
            // public void onNavigationItemReselected(@NonNull MenuItem item) {
@@ -92,9 +100,7 @@ public class productsActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                if (!newText.isEmpty())
                 searchBarFirebase(newText);
-
                 return true;
             }
         });
@@ -106,11 +112,18 @@ public class productsActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     private void searchBarFirebase(String newText){
-        options =
-                new FirebaseRecyclerOptions.Builder<ProductDetails>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Products").orderByChild("title").startAt(newText).endAt(newText+"\uf8ff"), ProductDetails.class)
-                        .build();
+        if (newText.isEmpty()){
+            options =
+                    new FirebaseRecyclerOptions.Builder<ProductDetails>()
+                            .setQuery(FirebaseDatabase.getInstance().getReference().child("Products"), ProductDetails.class)
+                            .build();
+        }else {
+            options =
+                    new FirebaseRecyclerOptions.Builder<ProductDetails>()
+                            .setQuery(FirebaseDatabase.getInstance().getReference().child("Products").orderByChild("title").startAt(newText).endAt(newText + "\uf8ff"), ProductDetails.class)
+                            .build();
 
+        }
         adapter = new productAdapter(options);
         adapter.startListening();
         recView.setAdapter(adapter);

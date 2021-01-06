@@ -6,6 +6,7 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -56,9 +57,13 @@ public class MainActivity extends AppCompatActivity {
         sign_in_button.setOnClickListener(view -> {
             String email_text = email_edit.getText().toString().trim();
             String password_text = pass_edit.getText().toString().trim();
-
+            final ProgressDialog progressDialog = new ProgressDialog(this);
+            progressDialog .setTitle("Logging in ");
+            progressDialog.setMessage("Please wait,until we check your details");
+            progressDialog.show();
             auth.signInWithEmailAndPassword(email_text, password_text).addOnCompleteListener(login -> {
                 if (login.isSuccessful()) {
+                    progressDialog.dismiss();
                     Intent myIntent = new Intent(getApplicationContext(), CategoryActivity.class);
                     startActivity(myIntent);
                     finish();
@@ -83,7 +88,10 @@ public class MainActivity extends AppCompatActivity {
     // in xml file of mainactivity we had attribute called onClick= "admin_login" he knows that he will call this method
     // in MainActivity class
     public void admin_login(View view) {
-
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog .setTitle("Logging in ");
+        progressDialog.setMessage("Please wait,until we check your details");
+        progressDialog.show();
         /*
         let's validate if the desired user is really an admin
          */
@@ -100,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
 
                         auth.signInWithEmailAndPassword(email_edit.getText().toString(),pass_edit.getText().toString()).addOnCompleteListener(login -> {
                             if (login.isSuccessful()) {
+                                progressDialog.dismiss();
                                 Intent it = new Intent(MainActivity.this, AdminActivity.class);
                                 startActivity(it);
                                 finish();

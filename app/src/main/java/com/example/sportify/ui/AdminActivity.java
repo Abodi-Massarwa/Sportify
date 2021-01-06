@@ -75,7 +75,6 @@ public class AdminActivity extends AppCompatActivity implements AdapterView.OnIt
         String id=dbRef.push().getKey();
         ProductDetails pd= new ProductDetails(name.getText().toString().trim(), Category, condition.getText().toString().trim(), price.getText().toString().trim(),id);
         pd.setImage_url(ImageUri.toString());
-
         dbRef.child(id).setValue(pd, new DatabaseReference.CompletionListener() {
             @Override
             public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
