@@ -1,21 +1,27 @@
 package com.example.sportify.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.MenuView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.sportify.PlacedActivity;
+import com.example.sportify.ui.CartItem;
+import com.example.sportify.ProductDetails;
 import com.example.sportify.R;
-import com.example.sportify.tools.CartItem;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Objects;
 
 public class CartActivity extends AppCompatActivity {
     FirebaseAuth ref = FirebaseAuth.getInstance();
@@ -33,6 +39,7 @@ public class CartActivity extends AppCompatActivity {
 
         mbase
                 = FirebaseDatabase.getInstance().getReference().child("prod");
+
 
         recyclerView = findViewById(R.id.recyclerView1337);
 
@@ -55,7 +62,7 @@ public class CartActivity extends AppCompatActivity {
         bt = findViewById(R.id.placeorder);
         bt.setOnClickListener(v -> {
             Toast.makeText(getApplicationContext(), "Processing your order", Toast.LENGTH_SHORT).show();
-            FirebaseDatabase.getInstance().getReference().child("customers").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("status").setValue("True");
+//        FirebaseDatabase.getInstance().getReference().child("customers").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("status").setValue("True");
             Intent placed = new Intent(getApplicationContext(), PlacedActivity.class);
             startActivity(placed);
         });
@@ -76,5 +83,5 @@ public class CartActivity extends AppCompatActivity {
         super.onStop();
         adapter.stopListening();
     }
-}
 
+}

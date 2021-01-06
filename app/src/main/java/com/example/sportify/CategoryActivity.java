@@ -72,6 +72,14 @@ public class CategoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityCategoryBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        Category = new ArrayList<>();
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open
+                , R.string.navigation_drawer_close);
         ref = FirebaseDatabase.getInstance().getReference("Profiles");
         storageProfile = FirebaseStorage.getInstance().getReference("Profile Pics");
         StorageReference profileRef = storageProfile.child(firebase.getCurrentUser().getUid() +".jpg");
@@ -99,14 +107,7 @@ public class CategoryActivity extends AppCompatActivity {
 
             }
         });
-        Category = new ArrayList<>();
-        auth = FirebaseAuth.getInstance();
-        user = auth.getCurrentUser();
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        navigationView = (NavigationView) findViewById(R.id.nav_view);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open
-                , R.string.navigation_drawer_close);
+
         /*
           <item>Dumbbells</item>
         <item>Sport</item>

@@ -73,6 +73,8 @@ public class ProfileActivity extends AppCompatActivity {
 
         binding = ActivityProfileBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.list_menu);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         user = FirebaseAuth.getInstance().getCurrentUser();
         ref = FirebaseDatabase.getInstance().getReference();
         storageProfile = FirebaseStorage.getInstance().getReference().child("Profile Pics");
@@ -88,6 +90,7 @@ public class ProfileActivity extends AppCompatActivity {
        // sp = getSharedPreferences("Emails",MODE_PRIVATE);
         String Email = user.getEmail();
         String name = user.getDisplayName();
+
         if (ref.child("Profiles").child(user.getUid())!=null) {
             ref.child("Profiles").child(user.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
@@ -116,6 +119,7 @@ public class ProfileActivity extends AppCompatActivity {
         binding.profileEmailId.setText(Email);
         binding.profileEmailId.setTextColor(Color.BLACK);
         binding.profileEmailId.setEnabled(false);
+
         binding.saveBotton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -4,25 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="horizontal"
-    android:layout_height="180dp"
+    android:layout_height="200dp"
     android:padding="8dp"
-    android:background="#fff"
     app:cardMaxElevation="20dp"
     app:cardCornerRadius="8dp"
-    android:backgroundTint="@color/purple_700"
+    android:background="#ACCFD8"
+    android:backgroundTint="#ACCFD8"
     android:clickable="true"
     android:layout_marginTop="5dp"
     >
 
-    <ImageView
-        android:id="@+id/image_product_id"
-        android:layout_width="120dp"
-        android:layout_height="138dp"
-        android:background="@color/American" />
+   <ImageView
+    android:id="@+id/image_product_id"
+    android:layout_width="120dp"
+    android:layout_height="138dp"
+       android:backgroundTint="#ACCFD8"
+    android:background="@color/American" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_height="190dp"
         android:layout_margin="7dp"
         android:orientation="vertical">
 
@@ -31,7 +32,7 @@
             android:id="@+id/product_name_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="120sp"
+            android:layout_marginLeft="150sp"
             android:text="product name"
             android:textColor="@color/white"
             android:textSize="16sp"
@@ -41,7 +42,7 @@
             android:id="@+id/category_name_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="120sp"
+            android:layout_marginLeft="150sp"
             android:text="Category"
             android:textColor="@color/white"
             android:textSize="16sp"
@@ -51,7 +52,7 @@
             android:id="@+id/rating_text_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="120sp"
+            android:layout_marginLeft="150sp"
             android:background="@drawable/rating_background"
 
             android:drawableLeft="@drawable/star_icon"
@@ -64,7 +65,7 @@
             android:id="@+id/price_value_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="120sp"
+            android:layout_marginLeft="150sp"
             android:hint="Price"
             android:textColor="@color/white"
             android:textSize="16sp"
@@ -76,12 +77,31 @@
             android:layout_height="50sp"
             android:layout_gravity="center"
             android:layout_marginLeft="120sp"
-            android:layout_marginTop="16sp"
+            android:layout_marginTop="10sp"
             android:backgroundTint="@color/colorPrimary"
             android:onClick="buynow"
             android:text="Order">
 
         </Button>
+        <EditText  android:id="@+id/quantity_text"
+            android:layout_width="100sp"
+            android:layout_height="40sp"
+            android:layout_marginLeft="120sp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:hint="Quantity"
+
+
+            />
+        <TextView
+            android:id="@+id/utc_text"
+            android:layout_width="180sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/details_text"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:textColor="#000"
+            android:textSize="16sp" />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

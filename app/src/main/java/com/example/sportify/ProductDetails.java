@@ -18,6 +18,8 @@ public class ProductDetails{
     private String price;
     private String utc;
     //public String id;
+   private String total;
+   private String quantity;
     public String getUtc() {
         return utc;
     }
@@ -39,6 +41,20 @@ public class ProductDetails{
         this.price = price;
     }
 
+    public ProductDetails(String title, String details, String condition, String price, String utc, String quantity,String img,String total) {
+        this.title = title;
+        this.details = details;
+        this.condition = condition;
+        this.price = price;
+        this.utc = utc;
+        this.quantity=quantity;
+        this.image_url=img;
+
+        Double x= (Integer.parseInt(quantity.trim())*Double.parseDouble(price.split(":")[1].trim()));
+        total=x.toString();
+        this.total=total;
+
+    }
 
 
     public String getTitle() {
@@ -50,6 +66,18 @@ public class ProductDetails{
 
     public String getImage_url() {
         return image_url;
+    }
+
+    public String getTotal() {
+        return total;
+    }
+
+    public String getQuantity() {
+        return quantity;
+    }
+
+    public void setTotal(String total) {
+        this.total = total;
     }
 
     public String getCondition() {

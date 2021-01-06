@@ -3,93 +3,123 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:animationCache="false"
-    android:background="@color/sportify_color">
+    android:layout_height="240dp"
+    android:padding="8dp"
+    android:background="#ACCFD8"
+    tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/cart_item_image"
+        android:layout_width="158dp"
+        android:layout_height="147dp"
+        app:layout_constraintEnd_toStartOf="@+id/cart_item_title"
+        app:layout_constraintHorizontal_bias="0.262"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cart_item_title"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/cart_item_title"
+        android:layout_width="0dp"
+        android:textSize="20sp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="88dp"
+        android:text="Name:"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/cart_item_reduce"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/cart_item_image"
+        app:layout_constraintStart_toStartOf="@+id/cart_item_price"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/cart_item_price"
+        android:layout_width="0dp"
+        android:layout_height="53dp"
+        android:layout_marginLeft="40sp"
+        android:textSize="20sp"
+        android:text="Price:"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/cart_item_total_price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.833"
+        app:layout_constraintStart_toEndOf="@+id/cart_item_image"
+        app:layout_constraintTop_toBottomOf="@+id/cart_item_title" />
+
+    <TextView
+        android:id="@+id/cart_item_total_price"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:text="Total:"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="@+id/cart_item_price"
+        app:layout_constraintTop_toBottomOf="@+id/cart_item_price" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/cart_item_increase"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/default_gap"
-        android:background="#FFFFFF"
-        android:baselineAligned="false"
-        android:orientation="horizontal"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:clickable="true"
+        app:backgroundTint="#1ed760"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="#ACCFD8"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/cart_item_quantity"
+        app:layout_constraintTop_toBottomOf="@+id/cart_item_total_price"
+        app:srcCompat="@android:drawable/ic_input_add" />
 
-        android:outlineAmbientShadowColor="@color/sportify_color"
-        android:outlineSpotShadowColor="@color/sportify_color"
-        android:weightSum="10"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/cart_item_reduce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:clickable="true"
+        app:backgroundTint="#1ed760"
+        android:backgroundTint="#ACCFD8"
+        app:layout_constraintEnd_toStartOf="@+id/cart_item_quantity"
+        app:layout_constraintHorizontal_bias="0.84"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cart_item_title"
+        app:srcCompat="@android:drawable/editbox_background_normal" />
 
-        app:layout_constraintTop_toTopOf="parent">
+    <TextView
+        android:id="@+id/cart_item_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cart_item_increase"
+        app:layout_constraintEnd_toStartOf="@+id/cart_item_increase"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/cart_item_reduce"
+        app:layout_constraintTop_toBottomOf="@+id/cart_item_total_price"
+        app:layout_constraintVertical_bias="0.513" />
 
-        <ImageView
-            android:id="@+id/cart_item_image"
-            android:layout_width="139dp"
-            android:layout_height="match_parent"
+    <Button
+        android:id="@+id/cart_item_remove"
+        android:layout_width="139dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Remove"
+        app:layout_constraintBottom_toBottomOf="@+id/cart_item_reduce"
+        app:layout_constraintEnd_toStartOf="@+id/cart_item_reduce"
+        app:layout_constraintHorizontal_bias="0.417"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cart_item_image"
+        app:layout_constraintVertical_bias="0.0" />
 
-            android:layout_weight="3"
-            tools:srcCompat="@tools:sample/avatars" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="233dp"
-            android:layout_weight="7"
-            android:orientation="vertical"
-            android:weightSum="10">
-
-            <TextView
-                android:id="@+id/cart_item_title"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_weight="3"
-                android:text="Product name : "
-
-                android:textSize="25dp" />
-
-            <TextView
-                android:id="@+id/cart_item_price"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_weight="3"
-                android:text="Price : "
-                android:textSize="25dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <Button
-
-                    android:id="@+id/button2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/roundedbutton"
-
-                    android:text="-"
-                    app:backgroundTint="@color/sportify_color" />
-
-                <TextView
-                    android:id="@+id/cart_item_quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="#"
-                    android:textAlignment="center"
-                    android:textSize="25dp" />
-
-                <Button
-                    android:id="@+id/button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/roundedbutton"
-                    android:text="+"
-                    app:backgroundTint="@color/sportify_color" />
-            </LinearLayout>
-
-        </LinearLayout>
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,6 +33,10 @@ public class productsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding =  ActivityProductsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.list_menu);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setHomeAsUpIndicator(R.drawable.home_logo);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         binding.activityProductsAction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,6 +92,7 @@ public class productsActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+
         getMenuInflater().inflate(R.menu.menu,menu);
         SearchView searchView = (SearchView) menu.findItem(R.id.search_button2).getActionView();
         searchView.setSubmitButtonEnabled(true);
@@ -113,10 +118,17 @@ public class productsActivity extends AppCompatActivity {
     }
     private void searchBarFirebase(String newText){
         if (newText.isEmpty()){
-            options =
-                    new FirebaseRecyclerOptions.Builder<ProductDetails>()
-                            .setQuery(FirebaseDatabase.getInstance().getReference().child("Products"), ProductDetails.class)
-                            .build();
+            if (category != null) {
+                options =
+                        new FirebaseRecyclerOptions.Builder<ProductDetails>()
+                                .setQuery(FirebaseDatabase.getInstance().getReference().child("Products").orderByChild("details").equalTo(category), ProductDetails.class)
+                                .build();
+            }else{
+                options =
+                        new FirebaseRecyclerOptions.Builder<ProductDetails>()
+                                .setQuery(FirebaseDatabase.getInstance().getReference().child("Products"), ProductDetails.class)
+                                .build();
+            }
         }else {
             options =
                     new FirebaseRecyclerOptions.Builder<ProductDetails>()

@@ -11,6 +11,12 @@
         <item>Clothes</item>
         <item>Athlete</item>
         <item>Sport Equipments</item>
+        <item>Addidas clothes</item>
+        <item>Nike clothes</item>
+        <item>Best of fashion</item>
+        <item>Boards</item>
+        <item>Tennis</item>
+        <item>Football</item>
     </string-array>
     <string name="title_activity_menu">Menu</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
