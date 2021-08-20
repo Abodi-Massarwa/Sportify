@@ -3,7 +3,12 @@
 ### Category
 ![image](https://github.com/Abodi-Massarweh/Sportify/blob/cdfea674b26035cf0e4345a06c2fc42d63c25841/Categories.jpeg)
 ### Explore
+![image](https://github.com/Abodi-Massarweh/Sportify/blob/cdfea674b26035cf0e4345a06c2fc42d63c25841/Explore.jpeg)
+
 ### Firebase Database
+#### Logging in
+![image](https://github.com/Abodi-Massarweh/Sportify/blob/cdfea674b26035cf0e4345a06c2fc42d63c25841/Logging In.jpeg)
+
 We obviously used firebase realtime DB & firebase Storage , further info will be provided down below (video footage & status-screenshots)
 Brief :
 In our application, with the help of Adapters we successfully retrieved data from our realtime Database and inflated it in RecyclerView , that way our recycler view in both Products activity & cart activity are real-time updated in the screen and our DB .
