@@ -1,5 +1,5 @@
 # Sportify
-### Sportify app is a store to share sport equipments
+### Sportify app is a store to buy sport equipments
 ### Category
 ![image](https://github.com/Abodi-Massarweh/Sportify/blob/cdfea674b26035cf0e4345a06c2fc42d63c25841/Categories.jpeg)
 ### Explore
