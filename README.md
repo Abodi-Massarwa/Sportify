@@ -7,7 +7,7 @@
 
 ### Firebase Database
 #### Logging in
-![image](https://github.com/Abodi-Massarweh/Sportify/blob/0310380634148eb359ecbbde7d21fd2eec81f845/Logging%20In.jpeg)
+<img src="https://github.com/Abodi-Massarweh/Sportify/blob/0310380634148eb359ecbbde7d21fd2eec81f845/Logging%20In.jpeg" width="40%" height="500" >
 
 We obviously used firebase realtime DB & firebase Storage , further info will be provided down below (video footage & status-screenshots)
 Brief :
