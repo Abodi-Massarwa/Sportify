@@ -1,7 +1,7 @@
 # Sportify
 ### Sportify app is a store to buy sport equipments
 ### Category
-<img src ="https://github.com/Abodi-Massarweh/Sportify/blob/cdfea674b26035cf0e4345a06c2fc42d63c25841/Categories.jpeg" width:"60vw" />
+<img src ="https://github.com/Abodi-Massarweh/Sportify/blob/cdfea674b26035cf0e4345a06c2fc42d63c25841/Categories.jpeg" width:"60vw" height="60vh" />
 ### Explore
 ![image](https://github.com/Abodi-Massarweh/Sportify/blob/cdfea674b26035cf0e4345a06c2fc42d63c25841/Explore.jpeg)
 
