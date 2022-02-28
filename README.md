@@ -3,7 +3,7 @@
 ### Category
 <img src ="https://github.com/Abodi-Massarweh/Sportify/blob/cdfea674b26035cf0e4345a06c2fc42d63c25841/Categories.jpeg" width="40%" height="500" >
 ### Explore
-![image](https://github.com/Abodi-Massarweh/Sportify/blob/cdfea674b26035cf0e4345a06c2fc42d63c25841/Explore.jpeg)
+<img src="https://github.com/Abodi-Massarweh/Sportify/blob/cdfea674b26035cf0e4345a06c2fc42d63c25841/Explore.jpeg" width="40%" height="500" >
 
 ### Firebase Database
 #### Logging in
