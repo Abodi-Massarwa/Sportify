@@ -10,7 +10,14 @@
 #### Logging in
 <img src="https://github.com/Abodi-Massarweh/Sportify/blob/0310380634148eb359ecbbde7d21fd2eec81f845/Logging%20In.jpeg" width="40%" height="500" >
 
-We obviously used firebase realtime DB & firebase Storage , further info will be provided down below (video footage & status-screenshots)
+
+### Profile 
+<img src="https://github.com/Abodi-Massarwa/Sportify/blob/master/Screen%20Shot%202022-03-01%20at%2023.30.55.png" width="40%" height="500" >
+
+### Bar 
+ <img width="174" alt="NavigationBar" src="https://user-images.githubusercontent.com/58775369/156252756-536c19a0-ff00-4112-b16d-daf532c8831c.png">
+We obviously used firebase realtime DB & firebase
+Storage , further info will be provided down below (video footage & status-screenshots)
 Brief :
 In our application, with the help of Adapters we successfully retrieved data from our realtime Database and inflated it in RecyclerView , that way our recycler view in both Products activity & cart activity are real-time updated in the screen and our DB .
 We applied this adapter in both Product’s activity and Cart activity .
